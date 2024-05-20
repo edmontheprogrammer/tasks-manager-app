@@ -5,6 +5,6 @@ from .serializers import TodoSerializer
 from .models import Todo
 
 
-class TodoView(viewsets):
+class TodoView(viewsets.ModelViewSet):
     serializer_class = TodoSerializer
-    quertset = Todo.objects.all()
+    queryset = Todo.objects.all()
