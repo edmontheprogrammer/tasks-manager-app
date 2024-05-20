@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+    # Installed Apps by Edmon
+    "todo",
+    "corsheaders",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -80,6 +85,12 @@ DATABASES = {
     }
 }
 
+# Whitelisting port 3000 for React
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+    'http://localhost:8000',
+    'http://localhost:8080',
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
