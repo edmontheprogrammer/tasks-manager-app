@@ -81,7 +81,7 @@ class App extends Component {
     </span>
 
     <span>
-      <button className='btn btn-info mr-2 '>Edit</button>
+      <button className='btn btn-info mr-2' >Edit</button>
       <button className='btn btn-danger mr-2'>Delete</button>
     </span>
     </li>
@@ -110,6 +110,5 @@ class App extends Component {
   }
 
 }
-
 
 export default App;
