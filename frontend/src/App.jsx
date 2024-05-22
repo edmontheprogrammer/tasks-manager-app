@@ -1,8 +1,13 @@
 import React, { useState, Component } from 'react'
 import './App.css'
 
-
 const tasks = [
+  {
+    id: 1, 
+    title: "Call Clients", 
+    description: "Call clients for overdue invoices",
+    completed: true 
+  },
   {
     id: 2, 
     title: "Dunning", 
@@ -64,8 +69,24 @@ class App extends Component {
     const newItems = this.state.taskList.filter(
       item => item.completed == viewCompleted
     ); 
-  }; 
 
+
+  return newItems.map(item => (
+    <li key={item.id} className='list-group-item d-flex justify-content-between 
+    align-items-center'>
+
+    <span className={`todo-title mr-2 ${this.state.viewCompleted ? "completed-todo" : "" }`}
+      title={item.title}>
+      {item.title}
+    </span>
+
+    <span>
+      <button className='btn btn-info mr-2 '>Edit</button>
+      <button className='btn btn-danger mr-2'>Delete</button>
+    </span>
+    </li>
+  ))
+}; 
 
   render() {
     return (
@@ -84,17 +105,11 @@ class App extends Component {
             </div>
           </div>
         </div>
-
-
-
       </main>
     )
   }
 
-
 }
-
-
 
 
 export default App;
